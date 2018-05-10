@@ -1,0 +1,272 @@
+<!-- Header Section  -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  .nav-tabs li a {
+      color: #777;
+  }
+  
+  #googleMap {
+      width: 100%;
+      height: 400px;
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 20px;
+  }
+  footer a {
+      color:#00BFFF;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  </style>
+</head>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Build@Application</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="basic.html">BASIC</a></li>
+        <li><a href="sdlc.html">SOFTWARE LIFECYCLE</a></li>
+        <li><a href="build.html">START BUILDING</a></li>
+						<li><a href="quiz.html">BEGIN QUIZ</a></li>
+		<li><a href="citation.html">CITATION</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">JUMP
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#1">Create the project</a></li>
+            <li><a href="#2">Design the User Interface</a></li>
+			<li><a href="#3">Add code to display button</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Body -->
+<div class = "col-xs-12" >
+		<h1 style="text-align:center;color:black;margin-top:7%;font-family:italic"> Create a simple Application</h1>
+</div>
+	
+<div class="container">
+	<h3 style="color:#00BFFF" id = "1">Create the Project</h3>
+	<p align="justify" style="font-size:16px">When you create an application in Visual Studio, you first create a project and a solution. For this example, you’ll create a Windows Presentation Foundation (WPF) project.
+	</p>
+	<h4 style="color:red;padding-top:1%">To create the WPF project</h4>
+	<p align="justify" style="font-size:16px">1. Create a new project. On the menu bar, choose File, New, Project….
+	</p>
+	<img class="img-responsive"  src="images/create1.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">You can also type New Project in the Quick Launch box to do the same thing.
+	</p>
+	<img class="img-responsive"  src="images/create2.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:5%">2. Choose the Visual Basic or the Visual C# WPF Application template by choosing in the left pane Installed, Templates, Visual C#, Windows, for example, and then choosing WPF Application in the middle pane. Name the project HelloWPFApp at the bottom of the New Project dialog.
+	</p>
+	<img class="img-responsive"  src="images/create3.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">Visual Studio creates the HelloWPFApp project and solution, and the Solution Explorer shows the various files. The WPF Designer shows a design view and an XAML view of MainWindow.xaml in a split view. You can slide the splitter to show more or less of either view. You can choose to see only the visual view or only the XAML view. (For more information, see WPF Designer for Windows Forms Developers). The following items appear in Solution Explorer:
+	</p>
+	<img class="img-responsive"  src="images/create4.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">After you create the project, you can customize it. By using the Properties window (found on the View menu), you can display and change options for project items, controls, and other items in an application. By using the project properties and property pages, you can display and change options for projects and solutions.
+	</p>	
+	
+	<div id="2"  style="padding-top:3%">
+	<h3 style="color:#00BFFF" >Design the User Interface (UI)</h3>
+	<p align="justify" style="font-size:16px">We will add three types of controls to this application: a TextBlock control, two RadioButton controls, and a Button control.
+	</p>
+	<h4 style="color:red;padding-top:1%">To add a TextBlock control</h4>
+	<p align="justify" style="font-size:16px">1. Open the Toolbox window by choosing the View menu and the Toolbox item.
+	</p>
+	
+	<p align="justify" style="font-size:16px">2. In the Toolbox, search for the TextBlock control.
+	</p>
+	<img class="img-responsive"  src="images/create5.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">3. Add a TextBlock control to the design surface by choosing the TextBlock item and dragging it to the window on the design surface. Center the control near the top of the window.
+	</p>
+	<p align="justify" style="font-size:16px">Your window should resemble the following illustration:
+	</p>
+	<img class="img-responsive"  src="images/create6.jpg">
+	
+	<h4 style="color:red;padding-top:2%">To add radio buttons</h4>
+	<p align="justify" style="font-size:16px">1. In the Toolbox, search for the RadioButton control.
+	</p>
+	<img class="img-responsive"  src="images/create7.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">2. Add two RadioButton controls to the design surface by choosing the RadioButton item and dragging it to the window on the design surface twice, and move the buttons (by selecting them and using the arrow keys) so that the buttons appear side by side under the TextBlock control.
+	</p>
+	<p align="justify" style="font-size:16px">Your window should resemble the following illustration:
+	</p>
+	<img class="img-responsive"  src="images/create8.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">3. In the Properties window for the left RadioButton control, change the Name property (the property at the top of the Properties window) to RadioButton1. Make sure you have selected the RadioButton and not the background Grid on the form; the Type field of the Property Window under the Name field should say RadioButton.
+	</p>
+	<p align="justify" style="font-size:16px;padding-top:2%">4. In the Properties window for the right RadioButton control, change the Name property to RadioButton2, and then save your changes by pressing Ctrl-s or using the File menu item. Make sure you selected the RadioButton before changing and saving.</p>
+	
+	
+	<h4 style="color:red;padding-top:3%">To add the button control</h4>
+	<p align="justify" style="font-size:16px">1. In the Toolbox, search for the Button control, and then add it to the design surface under the RadioButton controls by selecting Button and dragging it to the form in the design view.
+	</p>
+	
+	<p align="justify" style="font-size:16px;">2. In the XAML view, change the value of Content for the Button control from Content=”Button” to Content=”Display”, and then save the changes (Ctrl-s or use the File menu).
+	</p>
+	<p align="justify" style="font-size:16px">Your window should resemble the following illustration:
+	</p>
+	<img class="img-responsive"   src="images/create9.jpg">
+	</div>
+	
+	
+	<div id="3"  style="padding-top:3%">
+	<h3 style="color:#00BFFF" style="padding-top:3%" id = "3">Add code to the Display Button</h3>
+	<p align="justify" style="font-size:16px">When this application runs, a message box appears after a user first chooses a radio button and then chooses the Display button. One message box will appear for Hello, and another will appear for Goodbye. To create this behavior, you’ll add code to the Button_Click event in Greetings.xaml.vb or Greetings.xaml.cs.
+	</p>
+	<h4 style="color:red;padding-top:1%">Add code to display message boxes</h4>
+	<p align="justify" style="font-size:16px">1. On the design surface, double-click the Display button.
+	</p>
+	<p align="justify" style="font-size:16px">Greetings.xaml.vb or Greetings.xaml.cs opens, with the cursor in the Button_Click event. You can also add a click event handler as follows (if the pasted code has a red squiggle under any names, then you probably did not select the RadioButton controls on the design surface and rename them):
+	</p>
+	<p align="justify" style="font-size:16px">For Visual Basic, the event handler should look like this:
+	</p>
+	<img class="img-responsive"  src="images/create10.jpg">
+	<p align="justify" style="font-size:16px;padding-top:2%">For Visual C#, the event handler should look like this:
+	</p>
+	<img class="img-responsive"  src="images/create11.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">2. For Visual Basic, enter the following code:
+	</p>
+	<img class="img-responsive"  src="images/create12.jpg">
+	<p align="justify" style="font-size:16px;padding-top:2%">For Visual C#, enter the following code:
+	</p>
+	<img class="img-responsive"  src="images/create13.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">3. Save the application.
+	</p>
+	</div>
+	<p>(<cite>About Processes and Treads</cite>)</p>
+	
+</div>
+	
+
+
+<div style="text-align:center">
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"> <a class="page-link" href="configure.html" tabindex="-1">Previous</a></li>
+	<li class="page-item"><a class="page-link" href="build.html">1</a></li>
+	<li class="page-item"><a class="page-link" href="configure.html">2</a></li>
+    <li class="page-item active">
+      <a class="page-link" href="create.html">3 <span class="sr-only">(current)</span></a>
+    </li>
+	<li class="page-item"><a class="page-link" href="debug.html">4</a></li>
+    <li class="page-item">
+      <a class="page-link" href="debug.html">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Manual on <p ">How To Build an Application with C-Sharp</p> Made By <a href="https://www.foliotek.me/AnjanShrestha" data-toggle="tooltip" title="View ePortfolio" target="_blank">Anjan Shrestha</a></p> 
+</footer>
+
+</body>
+</html>

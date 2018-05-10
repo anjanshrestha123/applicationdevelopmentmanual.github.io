@@ -1,0 +1,261 @@
+<!-- Header Section  -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  .nav-tabs li a {
+      color: #777;
+  }
+  
+  #googleMap {
+      width: 100%;
+      height: 400px;
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 20px;
+  }
+  footer a {
+      color:#00BFFF;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  </style>
+</head>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Build@Application</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="basic.html">BASIC</a></li>
+        <li><a href="sdlc.html">SOFTWARE LIFECYCLE</a></li>
+        <li><a href="build.html">START BUILDING</a></li>
+				<li><a href="quiz.html">BEGIN QUIZ</a></li>
+		<li><a href="citation.html">CITATION</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">JUMP
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#1">Find and Fix errors</a></li>
+            <li><a href="#2">Debug with breakpoints</a></li>
+			<li><a href="#3">Build a release version of application</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Body -->
+<div class = "col-xs-12" id="1" >
+		<h1 style="text-align:center;color:black;margin-top:7%;font-family:italic"> Debug and test the application</h1>
+
+</div>
+	
+<div class="container" >
+		<p align="justify" style="font-size:16px">Next, you’ll debug the application to look for errors and test that both message boxes appear correctly. The following instructions tell you how to build and launch the debugger, but later you might read Building a WPF Application (WPF) and Debugging WPF for more information.
+		</p>
+		
+	<div id="1"  ">
+	<h3 style="color:#00BFFF" id = "1">Find and fix errors</h3>
+	<p align="justify" style="font-size:16px">In this step, you’ll find the error that we caused earlier by changing the name of the main window XAML file.
+	</p>
+	<h4 style="color:red">To start debugging and find the error</h4>
+	<p align="justify" style="font-size:16px">1. Start the debugger by selecting Debug, then Start Debugging.
+	</p>
+	<img class="img-responsive"  src="images/debug1.jpg">
+	<p align="justify" style="font-size:16px">A dialog box appears, indicating that an IOException has occurred: Cannot locate resource ‘mainwindow.xaml’.
+	</p>
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">2. Choose the OK button, and then stop the debugger.
+	</p>
+	<img class="img-responsive"  src="images/debug2.jpg">
+	<p align="justify" style="font-size:16px;padding-top:2%">We renamed Mainwindow.xaml to Greetings.xaml at the start of this walkthrough, but the code still refers to Mainwindow.xaml as the startup URI for the application, so the project can't start.</p>
+	</div>
+	
+	
+	
+	<div id="2"  style="padding-top:3%">
+	<h3 style="color:#00BFFF" >To debug with breakpoints</h3>
+	<p align="justify" style="font-size:16px">By adding some breakpoints, you can test the code during debugging. You can add breakpoints by choosing Debug on the main menu, then Toggle Breakpoint or by clicking in the left margin of the editor next to the line of code where you want the break to occur.
+	</p>
+	<h4 style="color:red;padding-top:1%">To add breakpoints</h4>
+	<p align="justify" style="font-size:16px">1. Open Greetings.xaml.vb or Greetings.xaml.cs, and select the following line: MessageBox.Show("Hello.")
+	</p>
+	
+	<p align="justify" style="font-size:16px">2. Add a breakpoint from the menu by selecting Debug, then Toggle Breakpoint.
+	</p>
+	<img class="img-responsive"  src="images/debug3.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">3. Select the following line: MessageBox.Show("Goodbye.").
+	</p>
+	
+	<p align="justify" style="font-size:16px">4. Press the F9 key to add a breakpoint, and then press the F5 key to start debugging.
+	</p>
+	
+	<p align="justify" style="font-size:16px">5. In the Greetings window, choose the Hello radio button, and then choose the Display button.
+	</p>
+	
+	<p align="justify" style="font-size:16px">6. On the menu bar, choose Debug, Step Out.
+	</p>
+	
+	<p align="justify" style="font-size:16px">7. Choose the OK button on the message box to close it.
+	</p>
+	
+	<p align="justify" style="font-size:16px">8. In the Greetings window, choose the Goodbye radio button, and then choose the Display button.
+	</p>
+	
+	<p align="justify" style="font-size:16px">9. Choose the F5 key to continue debugging. When the message box appears, choose the OK button on the message box to close it.
+	</p>
+	
+	<p align="justify" style="font-size:16px">10. Press the SHIFT + F5 keys (press shift first, and while holding it down, press F5) to stop debugging.
+	</p>
+	
+	<p align="justify" style="font-size:16px">11. On the menu bar, choose Debug, Disable All Breakpoints.
+	</p>
+	</div>
+	
+	
+	
+	<div id="3"  style="padding-top:3%">
+	<h3 style="color:#00BFFF" >Build a release version of the application</h3>
+	<p align="justify" style="font-size:16px">Now that you’ve verified that everything works, you can prepare a release build of the application.
+	</p>
+	<h4 style="color:red;padding-top:1%">To clean the solution files and build a release version</h4>
+	<p align="justify" style="font-size:16px">1. On the main menu, select Build, then Clean solution to delete intermediate files and output files that were created during previous builds. This is not necessary, but it cleans up the debug build outputs.
+	</p>
+	<img class="img-responsive"  src="images/debug4.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">2. Change the build configuration for HelloWPFApp from Debug to Release by using the dropdown control on the toolbar (it says “Debug” currently).
+	</p>
+	<img class="img-responsive"  src="images/debug5.jpg">
+	
+	<p align="justify" style="font-size:16px;padding-top:2%">3. Build the solution by choosing Build, then Build Solution or press the F6 key.
+	</p>
+	<img class="img-responsive"  src="images/debug6.jpg">
+	<p align="justify" style="font-size:16px;padding-top:2%">Congratulations on completing this walkthrough! You can find the .exe you built under your solution and project directory (…\HelloWPFApp\HelloWPFApp\bin\Release\). If you want to explore more examples, see <a href="https://msdn.microsoft.com/en-us/library/se881ay9.aspx" target="_blank">Visual Studio Samples </a>.</p>
+	
+	</div>
+	
+		<p>(<cite>About Processes and Treads</cite>)</p>
+</div>
+	
+
+
+<div style="text-align:center">
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"> <a class="page-link" href="create.html" tabindex="-1">Previous</a></li>
+	<li class="page-item"><a class="page-link" href="build.html">1</a></li>
+	<li class="page-item"><a class="page-link" href="configure.html">2</a></li>
+		<li class="page-item"><a class="page-link" href="create.html">3</a></li>
+    <li class="page-item active">
+      <a class="page-link" href="debug.html">4 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="quiz.html">Start Quiz</a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Manual on <p ">How To Build an Application with C-Sharp</p> Made By <a href="https://www.foliotek.me/AnjanShrestha" data-toggle="tooltip" title="View ePortfolio" target="_blank">Anjan Shrestha</a></p> 
+</footer>
+
+</body>
+</html>
